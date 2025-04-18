@@ -35,8 +35,6 @@
         }
        }
        function playround (Hmchoice,Comchoice){
-        getcomputerchoice();
-        gethumanchoice();
         if(Hmchoice==="rock" && Comchoice=== "scissors" || Hmchoice==="paper" && Comchoice=== "rock"  || Hmchoice==="scissors" && Comchoice=== "paper"){
             console.log("you won the battle");
             humanscore++;
@@ -51,6 +49,8 @@
        }
       function playgame () {
         for (let i = 0; i < 5; i++) {
+           getcomputerchoice();
+           gethumanchoice();
            playround(humanchoice,computerchoice);
         }
         if(humanscore > computerscore) {
