@@ -4,65 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>rock-paper-scissors</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="stylesheet.css">
 </head>
 <body>
-    <script>
-        let computerchoice = "";
-        let humanchoice = "";
-        let computerscore = 0;
-        let humanscore = 0;
-        function getcomputerchoice (){
-            let i = Math.random();
-            if (i<=0.3333){
-                computerchoice = "rock";
-            }
-            else if (i>0.3333 && i<=0.6666){
-                computerchoice = "paper";
-            }
-            else {
-                computerchoice ="scissors";
-            }
-        }
-       function gethumanchoice ( ) {
-        let i = prompt("choose your play:");
-        i = i.toLowerCase();
-
-        if( i == "rock" || i == "paper" || i == "scissors"){
-              humanchoice = i;
-        }
-        else{
-            console.log("unvalid choice");
-            humanchoice = "";
-        }
-       }
-       function playround (Hmchoice,Comchoice){
-        if(Hmchoice==="rock" && Comchoice=== "scissors" || Hmchoice==="paper" && Comchoice=== "rock"  || Hmchoice==="scissors" && Comchoice=== "paper"){
-            console.log("you won the battle");
-            humanscore++;
-        }
-        else if(Hmchoice===Comchoice){
-            console.log("tie!!");
-        }
-        else if(Comchoice==="rock" && Hmchoice=== "scissors" || Comchoice==="paper" && Hmchoice=== "rock"  || Comchoice==="scissors" && Hmchoice=== "paper"){
-            console.log("you lost the battle");
-            computerscore++;
-        }
-       }
-      function playgame () {
-        for (let i = 0; i < 5; i++) {
-           getcomputerchoice();
-           gethumanchoice();
-           playround(humanchoice,computerchoice);
-        }
-        if(humanscore > computerscore) {
-            console.log("you won the war")
-        }
-        else{
-            console.log("you lost the war")
-        }
-      }
-      playgame();
-  
-    </script>
+ <div id="buttons">
+<button class="btn">rock</button>
+<button class="btn">paper</button> 
+<button class="btn">scissors</button>
+</div>
+<div class="display"></div>
+<div class="score">
+    <div class="hmscore"></div>
+    <div class="comscore"></div>
+</div>
 </body>
 </html>
